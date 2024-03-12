@@ -14,7 +14,7 @@
     <meta name="description" content="Put your description here.">
     <meta name="viewport">
 
-    <!--文件編碼-->
+    <!--文件編碼, UTF-8很常用, 有包括英文、中文-->
     <meta charset="UTF-8">
 
     <!--主題色可以做設定, 但非每個瀏覽器都可以支援, ios可以看到, chrom看不到-->
@@ -31,10 +31,10 @@
 <!--    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap&text=0123456789" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Noto+Sans+Khojki&display=swap%text=0123456789" rel="stylesheet">
 
+
     <!--匯入css檔-->
+    <!--通常css的檔案可能會和別人協作, 因此會用link的方式連結css檔, 不會直接寫在html裡 -->
     <link rel="stylesheet" href="styles.css">
-
-
 
     <style>
         html { height:100%; overflow:hidden; }
@@ -64,8 +64,14 @@
             background-size: contain;
         }
 
+        /* "." 為class選擇器*/
         .title {
+            /*預設font-size為16px*/
+            /*margin邊界:上下左右*/
+            /*em為倍數大小, 相關於font-size大小*/
             margin:2em 0 0 0;
+            /*min(a,b), 兩者取小的值*/
+            /*值%會一直變動, 繼承父元素*/
             width: min(600px,80%);
         }
 
@@ -96,15 +102,20 @@
                 -webkit-text-stroke-width: 1.5px;
             }
         }
+        /*css取連結檔案用url*/
         #p { background-image: url("imgs/p.png"); }
         #op { background-image: url("imgs/op.png"); }
     </style>
 </head>
 
+<!--給使用者看的內容-->
 <body>
+<!--alt為圖片無法顯示的時候, 秀給使用者看的文字內容-->
+<!--img裡必要attribute有 src,alt-->
 <img class="title" src="imgs/popcat.svg" alt="POPCAT">
 
-<div class="cat-img" id="p"></div>
+<!--div為一區塊-->
+<div class="cat-img" id="p">123456TEXT中文</div>
 
 <script>
     /*Preloading alternate cat image*/
