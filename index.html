@@ -138,13 +138,28 @@
       cat.id = "p";
   }
 
+
+  //非同步function
+  //這裡控制閉嘴巴close_popcat(), 讓喵喵"0.2秒後"執行close_popcat()
+  function asynclose(value) {
+      setTimeout(close_popcat, 200);
+  }
+
+
   // 監聽事件
+  // 監聽事件(A發生時, B做什麼事)
   // keyup、keydown只有監聽"鍵盤"
   // pointerup、pointerdown會監聽"滑鼠、筆、手etc之類的pointer"
   document.addEventListener("keydown", open_popcat);
   document.addEventListener("pointerdown", open_popcat);
-  document.addEventListener("keyup", close_popcat);
-  document.addEventListener("pointerup", close_popcat);
+  document.addEventListener("keyup", asynclose);
+  document.addEventListener("pointerup", asynclose);
+
+
+
+
+
+
 
 
 
